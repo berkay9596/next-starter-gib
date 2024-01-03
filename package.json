@@ -27,6 +27,7 @@
     "@gib-ui/icons": "^0.0.4",
     "@hookform/resolvers": "^3.3.2",
     "@reduxjs/toolkit": "^2.0.1",
+    "@types/webpack": "^5.28.5",
     "axios": "^1.6.2",
     "lottie-react": "^2.4.0",
     "negotiator": "^0.6.3",

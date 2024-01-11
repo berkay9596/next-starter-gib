@@ -17,11 +17,16 @@
         justify-content: center;
     }
     .heroContent {
-        margin-right: 7em;
+        margin-right: auto;
+        max-width: 100vw;
+        padding: 1rem;
     }
     .heroImage {
         position: relative;
         right: 4rem;
+    }
+    .heroButtons {
+        flex-direction: column;
     }
 }
 

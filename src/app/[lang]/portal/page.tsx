@@ -28,12 +28,10 @@ const Home = ({ params }: { params: { lang: Locale } }) => {
                         <h1 className={styles.heroHeading}>{page.home.title}</h1>
 
                         <p className={styles.heroParagraph}>
-                            {page.home.heroParagraph.map((paragraph, index) => (
-                                <>
-                                    <p key={index}>{paragraph}</p>
-                                    <br />
-                                </>
-                            ))}
+                            {page.home.description}
+                            <br />
+                            <br />
+                            {page.home.text}
                         </p>
 
                         <div className={styles.heroButtons}>
@@ -46,7 +44,7 @@ const Home = ({ params }: { params: { lang: Locale } }) => {
                             >
                                 {page.home.errorButton}
                             </Button>
-                            <Link href="/falsyroute">
+                            <Link href={`/${params.lang}/falsyroute`}>
                                 <Button
                                     buttontype="primary"
                                     fullWidth

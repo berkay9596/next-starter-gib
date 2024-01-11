@@ -2,6 +2,7 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    font-family: var(--font-poppins) !important;
 }
 
 html,
@@ -9,7 +10,6 @@ body {
     max-width: 100vw;
     overflow-x: hidden;
     min-height: 100vh;
-    font-family: var(--font-poppins);
 }
 
 a {

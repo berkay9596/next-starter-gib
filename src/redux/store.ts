@@ -1,9 +1,11 @@
 import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
 import sidebarReducer from "@/redux/slices/sidebarSlice";
+import customizationReducer from "@/redux/slices/customizationSlice";
 
 export const store = configureStore({
     reducer: {
-        sidebar: sidebarReducer
+        sidebar: sidebarReducer,
+        customization: customizationReducer
     }
 });
 

@@ -3,14 +3,19 @@ const en = {
         home: "Home",
         sayfa1: "Page 1",
         sayfa2: "Page 2",
-        logoutButton: "Logout"
+        logoutButton: "Logout",
+        notification: "Notifications",
+        all: "All"
     },
     seacrh: {
         placeholder: "search"
     },
     page: {
         home: {
-            title: "Welcome to the GIB UI Starter Project",
+            title: "Welcome!",
+            description:
+                "This library is an optimized starting point for those who want to develop modern web applications. With its comprehensive feature set and user-friendly APIs, it helps you quickly launch your projects and build a powerful frontend experience. Suitable for both beginners and experienced developers, this library allows you to create advanced, interactive and stylish user interfaces using today's technologies. The project incorporates modern design principles and provides the basic building blocks needed to create user-friendly interfaces.",
+            text: "Get started with this starter project to quickly jumpstart your project and create an impressive user experience!",
             errorButton: "Test Error Page",
             notFoundButton: "Test 404 Page",
             skeletonButton: "Test Skeleton Usage",
@@ -70,6 +75,24 @@ const en = {
         },
         section3: {
             header: "Connections"
+        }
+    },
+    header: {
+        customization: {
+            title: "Customization",
+            colors: {
+                gib: "GİB",
+                red: "Red",
+                blue: "Blue",
+                purple: "Purple",
+                green: "Green",
+                yellow: "Yellow",
+                orange: "Orange"
+            },
+            sidebar: {
+                on: "On",
+                off: "Off"
+            }
         }
     }
 };

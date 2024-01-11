@@ -54,7 +54,7 @@ const useAxios = () => {
 
     const errorHandler = (error: any) => {
         if (error?.response) {
-            let item =
+            const item =
                 error?.response?.data?.messages?.find(
                     (message: message) => message?.type === "ERROR"
                 ) ||

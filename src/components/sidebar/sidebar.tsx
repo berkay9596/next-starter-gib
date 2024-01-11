@@ -7,10 +7,10 @@ import { getTranslate } from "@/lib";
 import { useAppSelector, useAppDispatch } from "@/redux//hooks";
 import { showSidebar, setShowSidebar } from "@/redux/slices/sidebarSlice";
 import styles from "./sidebar.module.css";
-import logo from "../../assets/images/gib_logo.png";
 import Image from "next/image";
 import { Home, MyInfos } from "@gib-ui/icons";
 import Cookies from "universal-cookie";
+import { customization } from "@/redux/slices/customizationSlice";
 
 const Sidebar = ({ lang }: { lang: Locale }) => {
     const hasLoginPage = process.env.NEXT_PUBLIC_HASLOGINPAGE === "true";
@@ -19,6 +19,8 @@ const Sidebar = ({ lang }: { lang: Locale }) => {
     const { width } = useWindowSize();
     const { navigation } = getTranslate(lang);
     const show = useAppSelector(showSidebar);
+    const customizationStyles = useAppSelector(customization);
+
     const dispatch = useAppDispatch();
     const [sidebarMobile, setSidebarMobile] = useState<boolean>(width < 1200);
     const sidebarContentRef = useRef<HTMLDivElement | null>(null);
@@ -82,7 +84,14 @@ const Sidebar = ({ lang }: { lang: Locale }) => {
                         <SideMenu
                             menuItems={menuItems}
                             onItemClick={handleItemClick}
-                            logo={<Image src={logo} width={100} height={80} alt="logo" />}
+                            logo={
+                                <Image
+                                    src={width < 600 ? "/Logo-light-mini.svg" : "/Logo-light.svg"}
+                                    width={230}
+                                    height={35}
+                                    alt="logo"
+                                />
+                            }
                             closeIcon
                             closeIconOnClick={() => dispatch(setShowSidebar(false))}
                             showActionButton={hasLoginPage}
@@ -92,7 +101,8 @@ const Sidebar = ({ lang }: { lang: Locale }) => {
                             customStyles={{
                                 sideMenuContainer: {
                                     minHeight: "110vh !important",
-                                    background: "linear-gradient(180deg, #2A80B9 0%, #2D3F51 100%)"
+                                    // background: "linear-gradient(180deg, #2A80B9 0%, #2D3F51 100%)"
+                                    background: customizationStyles.sidebarBgColor
                                 },
                                 textFieldFormControlStyle: {
                                     width: "200px"
@@ -100,12 +110,12 @@ const Sidebar = ({ lang }: { lang: Locale }) => {
                                 actionButtonStyles: {
                                     padding: "2rem",
                                     position: "absolute",
-                                    width: "350px",
+                                    width: "300px",
                                     bottom: 0,
                                     display: "flex",
                                     justifyContent: "center",
                                     alignItems: "center",
-                                    backgroundColor: "#0A808B"
+                                    background: customizationStyles.sidebarBgColor
                                 }
                             }}
                         />
@@ -121,7 +131,8 @@ const Sidebar = ({ lang }: { lang: Locale }) => {
                     customStyles={{
                         sideMenuContainer: {
                             width: "350px",
-                            background: "linear-gradient(180deg, #2A80B9 0%, #2D3F51 100%)",
+                            // background: "linear-gradient(180deg, #2A80B9 0%, #2D3F51 100%)",
+                            background: customizationStyles.sidebarBgColor,
                             minHeight: "80vh !important"
                         },
                         textFieldFormControlStyle: {
@@ -139,15 +150,16 @@ const Sidebar = ({ lang }: { lang: Locale }) => {
                             display: "flex",
                             justifyContent: "center",
                             alignItems: "center",
-                            backgroundColor: "#0A808B"
+                            // backgroundColor: "#0A808B"
+                            backgroundColor: customizationStyles.sidebarBgColor
                         }
                     }}
                 />
             );
         }
     };
-
-    return <>{sidebarStyled()}</>;
+    if (customizationStyles.hasSidebar) return <>{sidebarStyled()}</>;
+    else return;
 };
 
 export default Sidebar;

@@ -23,7 +23,7 @@ export default function LocaleSwitcher() {
                         key={locale}
                         item
                         sx={{
-                            bgcolor: selectedLocale === locale ? "#1E91A2" : "#B5E3E9",
+                            bgcolor: selectedLocale === locale ? "#2A80B9" : "#B5E3E9",
                             width: "30px",
                             height: "30px",
                             display: "flex",
@@ -33,7 +33,7 @@ export default function LocaleSwitcher() {
                     >
                         <Link href={redirectedPathName(locale)}>
                             <Typography
-                                color={selectedLocale === locale ? "#FFF" : "#1E91A2"}
+                                color={selectedLocale === locale ? "#FFF" : "#2A80B9"}
                                 fontSize="12px"
                                 fontWeight="700"
                             >

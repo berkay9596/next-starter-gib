@@ -29,11 +29,11 @@ interface FormProps extends FormButtonsProps {
     resetForm?: boolean;
     handleResetForm?: () => void;
     children?: React.ReactNode;
-    beforeSubmit?: (data: Object) => void;
-    afterSubmit?: (data: Record<string, unknown> | Object) => void;
+    beforeSubmit?: (data: Record<string, any>) => void;
+    afterSubmit?: (data: Record<string, unknown>) => void;
     method?: "GET" | "HEAD" | "POST" | "PUT" | "DELETE" | "CONNECT" | "OPTIONS" | "TRACE" | "PATCH";
     url?: string;
-    headers?: Object;
+    headers?: Record<string, string>;
     formData?: boolean;
     customtemplate?: boolean;
 }
@@ -69,9 +69,8 @@ const Form = (props: FormProps) => {
 
     const onSubmit = async (data: any) => {
         if (props?.url) {
-            let requestBody = null;
             if (props?.beforeSubmit) {
-                requestBody = props?.beforeSubmit(data);
+                props?.beforeSubmit(data);
             }
             const config = {
                 method: props?.method || "POST",

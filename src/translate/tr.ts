@@ -3,14 +3,19 @@ const tr = {
         home: "Ana Sayfa",
         sayfa1: "Sayfa 1",
         sayfa2: "Sayfa 2",
-        logoutButton: "Çıkış Yap"
+        logoutButton: "Çıkış Yap",
+        notification: "Bildirimler",
+        all: "Tümü"
     },
     seacrh: {
         placeholder: "ara"
     },
     page: {
         home: {
-            title: "GİB UI Starter Projesine Hoşgeldiniz",
+            title: "Hoş Geldiniz!",
+            description:
+                "Bu kütüphane, modern web uygulamaları geliştirmek isteyenler için optimize edilmiş bir başlangıç noktasıdır. Kapsamlı özellik seti ve kullanıcı dostu API'larıyla, projelerinizi hızla başlatmanıza ve güçlü bir frontend deneyimi oluşturmanıza yardımcı olur. Hem yeni başlayanlar hem de deneyimli geliştiriciler için uygun olan bu kütüphane, günümüz teknolojilerini kullanarak gelişmiş, etkileşimli ve şık kullanıcı arayüzleri oluşturmanıza olanak tanır. Proje, modern tasarım prensiplerini içerir ve kullanıcı dostu arayüzler oluşturmak için gerekli temel yapı taşlarını sunar.",
+            text: "Hızlı bir şekilde projenize başlamak ve etkileyici bir kullanıcı deneyimi oluşturmak için bu starter projesini kullanmaya başlayın!",
             errorButton: "Error Sayfası",
             notFoundButton: "404 Sayfası",
             skeletonButton: "Skeleton Kullanımı",
@@ -70,6 +75,24 @@ const tr = {
         },
         section3: {
             header: "Bağlantılar"
+        }
+    },
+    header: {
+        customization: {
+            title: "Tasarım",
+            colors: {
+                gib: "GİB",
+                red: "Kırmızı",
+                blue: "Mavi",
+                purple: "Mor",
+                green: "Yeşil",
+                yellow: "Sarı",
+                orange: "Turuncu"
+            },
+            sidebar: {
+                on: "Açık",
+                off: "Kapalı"
+            }
         }
     }
 };

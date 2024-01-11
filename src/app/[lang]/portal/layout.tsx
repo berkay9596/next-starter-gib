@@ -11,7 +11,7 @@ const PortalLayout = async ({
     params: { lang: Locale };
 }) => {
     return (
-        <div style={{ zoom: 0.95 }}>
+        <div style={{ zoom: "0.95 !important" }}>
             <Header lang={params.lang} />
             <div style={{ display: "flex", marginTop: "70px" }}>
                 <Sidebar lang={params.lang} />
